@@ -1,0 +1,2 @@
+These codes are for solving a deterministic Unit Commitment(UC) problems using Multi-Integer Linear Programing(MILP) models with single-set or two-set of binary variables. 
+The effectiveness of these models with strong valid inequalities are tested on both the 20-instance experiment and IEEE 118-bus system.
