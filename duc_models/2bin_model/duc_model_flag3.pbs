@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#PBS -N DucStrong3Test-2binmodel-1binuser_callcuts
+#PBS -l nodes=1:ppn=16
+#PBS -l walltime=168:00:00
+#PBS -l mem=64g
+#PBS -e /hpc/puhome/21040136r/my_programs/DUC_Programs/duc_error_file
+#PBS -o /hpc/puhome/21040136r/my_programs/DUC_Programs/duc_outfile
+# Job queue name: ho0gen1
+# name of nodes: h05gen1, h05gen2, h05dev
+#PBS -q h05gen2
+
+EXEC=python
+cd /hpc/puhome/21040136r/my_programs/DUC_Programs/MIP_test_code
+module load Anaconda3-2022.05
+source activate my_env
+
+flag=3
+
+for (( i=1; i < 11 ; ++i ))
+do
+    $EXEC duc_main.py $i $flag
+done
